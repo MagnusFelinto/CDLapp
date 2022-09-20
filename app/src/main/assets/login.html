@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title>CDL de Apodi</title>
+    <style >
+      /**
+        * Cores da logo da CDL
+        * Color blue   #294e94
+        * Color yellow #fbab2c
+        * Color green  #00a056
+        **/
+     .container{
+       position: static;
+        width: 100%;
+        height: 488px;
+        left: -15px;
+        top: 361px;
+
+        background: linear-gradient(178.6deg, #00A056 -30.09%, #3300FF 77.97%);
+        border-radius: 62px 62px 10px 10px;
+     }
+     .btn-entra{
+        width: 155px;
+        height: 36px;
+        left: 102px;
+        top: 647px;
+        background: #FBAB2C;
+        border-radius: 30px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 16px;    
+        text-align: center;
+        
+    
+     }
+     .premio{
+  
+        width: 203px;
+        height: 65px;
+        left: 78px;
+        top: 234px;
+
+        font-family: 'Open Sans Hebrew';
+        font-style: italic;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 33px;
+        text-align: center;
+        color: #294E94;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     }
+     .merito{
+  
+        width: 203px;
+        height: 65px;
+        left: 78px;
+        top: 284px;
+        text-align: center;
+        color: #294E94;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Open Sans Hebrew;
+        font-size: 13px;
+        font-style: italic;
+        font-weight: 800;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: center;
+
+     }
+     .form {
+        margin-top: 15%;   
+     }
+     .logo{
+       
+        width: 296px;
+        height: 189px;
+        left: 31px;
+        top: 71px;
+        background: url('logo.png');
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+     }
+     .input-login{ 
+        width: 205px;
+        height: 30px;
+        left: 112px;
+        top: 527px;
+        font-size: medium;
+        padding:0px 10px;
+        font-family:  'Open Sans';
+        background: #FFFFFF;
+        border-radius: 6px;
+     }
+     .mensagem{
+        margin-top: 50px;
+        font-family: 'Open Sans Hebrew';
+        font-style: italic;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 33px;
+        text-align: center;
+        color: #fff;
+     }
+      body{
+        background-size: 100%;
+        background-image: url('background-white3.jpg');/* background.jpg **/
+        background-repeat: repeat-y;
+       
+      }
+
+      
+    </style>
+     
+  </head>
+  <body >
+
+       <div align="center">
+          <!--<img src  ="assets/logo.png"
+           width=""
+           alt=""
+           class="logo"
+           />-->
+           <div class="logo"></div>
+           <label class="premio">
+                PRÊMIO </label>
+    </br>
+        <label  class="merito">
+            MÉRITO EMPREENDEDOR
+        </label>
+          </br>
+         </br>
+    <div id="root"  class="container">
+    </br>
+         </br>
+        
+    <label class="mensagem" id="mensagem1" for="">
+   
+    </label>
+    <script>
+     
+   if(localStorage.msg)
+      document.getElementById("mensagem1").innerText = localStorage.msg;
+   else
+      document.getElementById("mensagem1").innerText = "Seja Bem Vindo(a)";
+   </script>
+      <form method="post" class="form" action="">
+      </br>
+          <input class="input-login" type="text" placeholder="👤 Usuario" name="usuario" id="usuario" /> <!--- diretor / vice-direto-->
+          </br>
+          </br>
+          <input class="input-login" type="password" placeholder="🔑 Senha" name="senha" id="senha"/>
+          </br>
+          </br>
+          <input class="btn-entra"   type="button"  id="entra" style="text-align: center;" value="ENTRAR" onclick="en()"/>
+          </br>
+          </br>
+      </form>
+      <script>
+         let contas= [
+       ['magnusfelinto','magnusmv123','Magnus'],
+       ['admin','admin123', 'admin'],
+       ['pesquisador1','pesquisador123', 'Pesquisador1'],
+       ['pesquisador3','pesquisador123', 'Pesquisador3'],
+       ['pesquisador2','pesquisador123', 'Pesquisador2'],
+       ['pesquisador4','pesquisador123', 'Pesquisador4'],
+       ['pesquisador5','pesquisador123', 'Pesquisador5'],
+       ];
+       let n =  contas.length;
+        function en(){
+          //   window.location.href = "index.html"
+    
+    
+       //window.location.href = "index.html"
+       let usuario = document.getElementById("usuario");
+       let senha   = document.getElementById("senha");
+       let achou =0;
+       let user ='';
+       let msg, i;
+       senha = senha.value
+       usuario = usuario.value
+       localStorage.msg = "Os dados informados estão incorretos"
+      for( i =0; i < n; i++ ) {
+            if(contas[i][0] == usuario){
+                achou =1 ;
+                if(contas[i][1] == senha){
+                    achou =2 ;
+                    user = contas[i][2];
+                    localStorage.msg = 'Seja bem vindo (a) '.user;
+                    localStorage.user= user;
+                    break;
+                    //res.sendFile(__dirname+"/pags/menu.html")// window.location.replace("/menu");
+                }
+                else{
+                     localStorage.msg = 'Senha Incorreta!';
+                  // res.sendFile(__dirname+"/pags/login_system.html")// window.location.replace("/login"); 
+                    break;
+                }   
+            }
+            
+  
+       }
+       if(achou == 0 || achou == 1){
+           // res.send("usuario: "+ usuario+" senha: "+senha+" achou: "+achou)
+           location.reload()
+         //  res.sendFile(__dirname+"/pags/login_system.html")
+       }
+       else{
+           //console.log("Usuario: "+usuario+" senha: "+" n: "+n)
+           window.location.href = "index.html"
+          // res.sendFile(__dirname+"/pags/menu.html")
+       }
+     }
+  
+     </script>  
+    </div>
+    </div>    
+    </body>
+</html>

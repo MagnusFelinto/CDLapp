@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Formulario de pesquisa</title>
+    <style>
+
+.scroll {
+
+    display: block;
+    border: 0px solid red;
+    padding: 5px;
+    margin-top: 5px;
+    width: 90%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.cab{
+  /* box-sizing: border-box;*/
+   position: relative;
+   width: 100%;
+   padding-top:2% ;
+   padding-bottom:2% ;
+  /*  left: -6px;
+    top: -159px;*/
+   background: linear-gradient(178.6deg, #00A056 -30.09%, #3300FF 77.97%);
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 62px 62px;
+ }
+ 
+
+.sair{
+position: absolute;
+margin-left:  2%;
+margin-top:   1%;
+margin-bottom:1%;
+}
+.caixap{
+width: 309px;
+height: 271px;
+
+background: linear-gradient(0deg, #FBAB2C, #FBAB2C), 
+          linear-gradient(0deg, #FFFFFF, #FFFFFF),
+          linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+border-radius: 10px;
+
+margin-top: 5%;
+
+}
+.drive{
+margin-top: 30%;
+Width: 87.4px;
+height: 76px;
+}
+.btn-enviar{
+width: 195px;
+height: 69px;
+left: 86px;
+top: 522px;
+margin-top: 5%; 
+margin-bottom: 5%; 
+background: linear-gradient(0deg, #00A056, #00A056), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+border-radius: 15px;
+}
+.black{
+color: #000;
+}
+.white{
+color: #FFFFFF;
+}
+input.caixap{
+display: none;
+}
+
+
+input[type=submit] {
+/*background-color: #04AA6D;*/
+background: linear-gradient(0deg, #00A056, #00A056);
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+
+}
+</style>
+    
+
+
+  </head>
+
+  <div class="cab">
+    <a href="index.html" type="button" class="sair">
+            <img class="back" src="assets/back.png" alt="">
+        </a>
+        <div align="center" >
+                <img class="form" src="pasta.png" alt="">
+          
+            </div>
+    </div>
+
+
+
+<!-- Mensagem de status -->
+
+
+    <h3><div align="center" class="alert alert-"></div></h3>
+
+
+<div class="caixa2">
+  <div align="center" class="caixa">
+   <div class="col-md-12">
+    <form method="post" action="#" class="form" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="file" id="file" class="form-control caixap inputfile" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" multiple>
+              <label for="file" class="caixap">
+                <div class="caixap">
+                  <img class="drive" src="driver.png" alt="">
+                  <p class="white">Drive folder upload</p>   
+                </div> 
+            </label> 
+            <div class="form-group">
+            <button type="submit" class="btn-enviar" name="submit" value="">
+               <img src="nuvem.png" > 
+           </button>
+           
+        </div>
+            <!--<input type="submit" class="" name="enviar" id="enviar" value="enviar">
+             <!--<label for="enviar">
+              <div class="btn-enviar">
+                <img src="assets/nuvem.png">   
+              </div>
+             
+             </label>-->
+        </div>
+        
+    </form>
+    <h4 class="black">
+      Pesquisador não esqueça de fazer o upload dos arquivos levantados hoje na pesquisa de campo.
+    </h4>
+   </div>
+  </div>
+</div>
+
+</html>

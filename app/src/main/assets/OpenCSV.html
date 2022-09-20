@@ -1,0 +1,67 @@
+
+<title>BLAAAA</title>
+<style>
+    #conteudo{
+        border: solid 1 px #008080;
+        overflow-y: scroll;
+        height: 400px;
+    }
+</style>
+<head>
+  <script type="text/javascript">
+    
+function getTag(nomeId){
+    return document.getElementById(nomeId);
+}
+
+function separaLinhas(txt){
+    var separado = txt.replace(/,/g,",");
+    separado = separado.replace(/\r\n/g,"},{");
+
+    separado = "{"+separado;
+    separado = "["+separado.substr(0, separado.length-3)+"]";
+    return separado;
+}
+function separaLinhasSemAspas(txt){
+    var separado = txt.replace(/\r\n/g,"},{"); //   /,/g,","
+    separado = separado.replace(/,/g,","); //  /\r\n/g,"},{"
+
+    separado = "{"+separado;
+    separado = "["+separado.substr(0, separado.length-2)+"]";
+    return separado;
+}
+
+function init(){
+    var arqSele = document.getElementById('arqAlvo')
+    var fileReader = new FileReader();
+    var  rel = getTag("conteudo");
+    var S ="";
+    fileReader.onload = function (e){
+        var fileContents = document.getElementById('conteudo');
+        S+= separaLinhas(fileReader.result);//fileReader.result//
+        rel.innerHTML = S;
+    }
+    arqSele.addEventListener('change', function(e){
+        var arquivo = arqSele.files[0];
+        rel = getTag("conteudo");
+        S = "<h1>Dados do arquivo</h1>";
+        S +="<p><b>Nome: </b>"+arquivo.name+"</p>";
+        S +="<p><b>Tipo: </b>"+arquivo.type+"</p>";
+        // Lendo o arquivo   
+        fileReader.readAsText(arquivo, 'ISO-8859-1');
+
+    })
+    }
+
+
+  </script>
+
+</head>
+<body onload="init();">
+    <h1>bla bla bla</h1>
+    <h2><i>ble ble ble</i></h2>
+    <input type="file" name="arqAlvo" id="arqAlvo" value=""></br>
+    <div id="conteudo">
+        
+    </div>
+</body>

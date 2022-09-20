@@ -1,0 +1,5 @@
+Aplication/src/Domain/bin/*
+Aplication/src/Domain/obj/*
+Aplication/vendor/*
+Aplication/dados/*
+Aplication/node_modules/*
